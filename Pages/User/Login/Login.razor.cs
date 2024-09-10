@@ -4,28 +4,34 @@ using BlazorAntdProApp.Services;
 using Microsoft.AspNetCore.Components;
 using AntDesign;
 
-namespace BlazorAntdProApp.Pages.User {
-  public partial class Login {
-    private readonly LoginParamsType _model = new LoginParamsType();
+namespace BlazorAntdProApp.Pages.User
+{
+    public partial class Login
+    {
+        private readonly LoginParamsType _model = new LoginParamsType();
 
-    [Inject] public NavigationManager NavigationManager { get; set; }
+        [Inject] public NavigationManager NavigationManager { get; set; }
 
-    [Inject] public IAccountService AccountService { get; set; }
+        [Inject] public IAccountService AccountService { get; set; }
 
-    [Inject] public MessageService Message { get; set; }
+        [Inject] public MessageService Message { get; set; }
 
-    public void HandleSubmit() {
-      if (_model.UserName == "admin" && _model.Password == "ant.design") {
-        NavigationManager.NavigateTo("/");
-        return;
-      }
+        public void HandleSubmit()
+        {
+            if (_model.UserName == "admin" && _model.Password == "admin")
+            {
+                // NavigationManager.NavigateTo("/");
+                NavigationManager.NavigateTo("/list/search/articles");
+                return;
+            }
 
-      if (_model.UserName == "user" && _model.Password == "ant.design") NavigationManager.NavigateTo("/");
+            if (_model.UserName == "user" && _model.Password == "ant.design") NavigationManager.NavigateTo("/");
+        }
+
+        public async Task GetCaptcha()
+        {
+            var captcha = await AccountService.GetCaptchaAsync(_model.Mobile);
+            await Message.Success($"Verification code validated successfully! The verification code is: {captcha}");
+        }
     }
-
-    public async Task GetCaptcha() {
-      var captcha = await AccountService.GetCaptchaAsync(_model.Mobile);
-      await Message.Success($"Verification code validated successfully! The verification code is: {captcha}");
-    }
-  }
 }
