@@ -1,0 +1,319 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BlazorAntdProApp
+build_property.RootNamespace = BlazorAntdProApp
+build_property.ProjectDir = D:\OpenSource\Personal\BlazorAntdProApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 3.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\OpenSource\Personal\BlazorAntdProApp
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Components/GlobalHeader/RightContent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xHbG9iYWxIZWFkZXJcUmlnaHRDb250ZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Layouts/BasicLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xCYXNpY0xheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/AvatarList/AvatarListItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBdmF0YXJMaXN0XEF2YXRhckxpc3RJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/BindingView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEJpbmRpbmdWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/NotificationView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvblZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/SecurityView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXFNlY3VyaXR5Vmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/Bar/Bar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEJhclxCYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/Gauge/Gauge.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEdhdWdlXEdhdWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/MiniArea/MiniArea.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlBcmVhXE1pbmlBcmVhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/MiniBar/MiniBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlCYXJcTWluaUJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/PageLoading/PageLoading.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcUGFnZUxvYWRpbmdcUGFnZUxvYWRpbmcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/SalesCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcU2FsZXNDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/Gauge/Gauge.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcR2F1Z2VcR2F1Z2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/Map/Map.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcTWFwXE1hcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/Map/MiniArea.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcTWFwXE1pbmlBcmVhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/Pie/Pie.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcUGllXFBpZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/TagCloud/TagCloud.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcVGFnQ2xvdWRcVGFnQ2xvdWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/Charts/WaterWave/WaterWave.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcV2F0ZXJXYXZlXFdhdGVyV2F2ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Workplace/Components/Radar/AutoHeight.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXFJhZGFyXEF1dG9IZWlnaHQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Exception/403/403.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDQwM1w0MDMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Exception/404/404.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDQwNFw0MDQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Exception/500/500.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDUwMFw1MDAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Applications/Components/TagSelect/TagSelectOption.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcVGFnU2VsZWN0XFRhZ1NlbGVjdE9wdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Projects/Projects.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcUHJvamVjdHNcUHJvamVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/SearchList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcU2VhcmNoTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Um91dGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Layouts/UserLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xVc2VyTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xa3ga2jbxm
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/Applications/Applications.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcHBsaWNhdGlvbnNcQXBwbGljYXRpb25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-o2i5gzgxgd
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/ArticleListContent/ArticleListContent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcnRpY2xlTGlzdENvbnRlbnRcQXJ0aWNsZUxpc3RDb250ZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-sb4y6yjxsp
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/Articles/Articles.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcnRpY2xlc1xBcnRpY2xlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-w49pumgyyc
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/AvatarList/AvatarList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBdmF0YXJMaXN0XEF2YXRhckxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xn3cdkr2h3
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/Projects/Projects.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xQcm9qZWN0c1xQcm9qZWN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-g03z4s2xe6
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-vzikta2dhn
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/BaseView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEJhc2VWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xmwfsmio1x
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/GeographicView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEdlb2dyYXBoaWNWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-f0k4ftd3ea
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Components/PhoneView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXFBob25lVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qf6ygzmbaf
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Settings/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-v4aszvyjq7
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/ChartCard/ChartCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXENoYXJ0Q2FyZFxDaGFydENhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-50pjpkvw28
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/Field/Field.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEZpZWxkXEZpZWxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-uy3ek9nqrd
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/MiniProgress/MiniProgress.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlQcm9ncmVzc1xNaW5pUHJvZ3Jlc3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-nnhqdl06je
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/Pie/Pie.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFBpZVxQaWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-i00r4tq1te
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/TagCloud/TagCloud.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFRhZ0Nsb3VkXFRhZ0Nsb3VkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-atcpbn2uvg
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/TimelineChart/TimelineChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFRpbWVsaW5lQ2hhcnRcVGltZWxpbmVDaGFydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-w9jlgoka7h
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Charts/WaterWave/WaterWave.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFdhdGVyV2F2ZVxXYXRlcldhdmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-c8iurpvplz
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/NumberInfo/NumberInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcTnVtYmVySW5mb1xOdW1iZXJJbmZvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-pkbly3aajz
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Components/Trend/Trend.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcVHJlbmRcVHJlbmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3jr244ji2y
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Analysis/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1bijjcz9cz
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Components/ActiveChart/ActiveChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xBY3RpdmVDaGFydFxBY3RpdmVDaGFydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-yk04l0qchl
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Monitor/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-p357h1teo1
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Workplace/Components/EditableLinkGroup/EditableLinkGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXEVkaXRhYmxlTGlua0dyb3VwXEVkaXRhYmxlTGlua0dyb3VwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-83fqlgdgfk
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Workplace/Components/Radar/Radar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXFJhZGFyXFJhZGFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1oo4bp3kon
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Dashboard/Workplace/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-bjx3od4qqy
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/AdvancedForm/AdvancedForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxBZHZhbmNlZEZvcm1cQWR2YW5jZWRGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-warmfrbppx
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/BasicForm/BasicForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxCYXNpY0Zvcm1cQmFzaWNGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-vl9vked9v4
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/StepForm/Components/Step1/Step1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAxXFN0ZXAxLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-5hqij1m1sa
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/StepForm/Components/Step2/Step2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAyXFN0ZXAyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-dfkiai6432
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/StepForm/Components/Step3/Step3.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAzXFN0ZXAzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1htd8k8ccg
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/StepForm/StepForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxTdGVwRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-dv7gq7pujx
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/BasicList/BasicList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxCYXNpY0xpc3RcQmFzaWNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-w3zjijlg32
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/CardList/CardList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxDYXJkTGlzdFxDYXJkTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-623qmx5ehp
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Applications/Applications.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXEFwcGxpY2F0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-34m3ifx79r
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Applications/Components/StandardFormRow/StandardFormRow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcU3RhbmRhcmRGb3JtUm93XFN0YW5kYXJkRm9ybVJvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qtcysze95e
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Applications/Components/TagSelect/TagSelect.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcVGFnU2VsZWN0XFRhZ1NlbGVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-b6fuir6ftg
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/Articles/Articles.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXJ0aWNsZXNcQXJ0aWNsZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-r0ii53eppg
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/TableList/TableList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxUYWJsZUxpc3RcVGFibGVMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-h5h4t1puwo
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Profile/Advanced/Advanced.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxBZHZhbmNlZFxBZHZhbmNlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-pr10yg6an6
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Profile/Basic/Basic.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxCYXNpY1xCYXNpYy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qep25rd1z3
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Result/Fail/Fail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0XEZhaWxcRmFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-bodrahphlo
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/Result/Success/Success.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0XFN1Y2Nlc3NcU3VjY2Vzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-s640warvbr
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/User/Login/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dpblxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1ynuqx3659
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/User/RegisterResult/RegisterResult.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZWdpc3RlclJlc3VsdFxSZWdpc3RlclJlc3VsdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-919u1f7i1x
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/User/Register/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZWdpc3RlclxSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-mm7envum34
