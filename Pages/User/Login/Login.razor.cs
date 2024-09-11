@@ -20,8 +20,8 @@ namespace BlazorAntdProApp.Pages.User
         {
             if (_model.UserName == "admin" && _model.Password == "admin")
             {
-                // NavigationManager.NavigateTo("/");
-                NavigationManager.NavigateTo("/list/search/articles");
+                NavigationManager.NavigateTo("/");
+                //NavigationManager.NavigateTo("/list/search/articles");
                 return;
             }
 
