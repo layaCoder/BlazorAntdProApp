@@ -1,0 +1,49 @@
+﻿@namespace BlazorAntdProApp.Pages.QuotationBuilder
+@page "/quotation-builder"
+
+<div>
+    <Steps Current="step" Class="site-navigation-steps">
+        <Step Title="Finished" Description="This is a description." />
+        <Step Title="In Progress" Subtitle="Left 00:00:08" Description="This is a description." />
+        <Step Title="Waiting" Description="This is a description." />
+        <Step Title="Waiting" Description="This is a description." />
+    </Steps>
+</div>
+@if (step == 0)
+{
+    <div>
+        <SpecifyBasicForm goNextStep="goNextStep" />
+    </div>
+}
+@if (step == 1)
+{
+    <div>
+        <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
+    </div>
+}
+
+
+
+
+
+@code {
+    public int step = 0;
+
+    private void goNextStep()
+    {
+        if (step >= 0 & step < 4)
+        {
+            step++;
+            StateHasChanged();
+
+        }
+    }
+    private void goPreviousStep()
+    {
+        if (step <= 3 & step >= 1)
+        {
+            step--;
+            StateHasChanged();
+        }
+    }
+}

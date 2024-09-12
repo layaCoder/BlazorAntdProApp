@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "path": "/dashboard",
     "name": "Dashboard",
@@ -123,6 +123,29 @@
         "path": "/result/fail",
         "name": "Failed page",
         "key": "result.fail"
+      }
+    ]
+  },
+  {
+    "path": "/exception",
+    "name": "Error Pages",
+    "key": "exception",
+    "icon": "exception",
+    "children": [
+      {
+        "path": "/exception/403",
+        "name": "403",
+        "key": "exception.403"
+      },
+      {
+        "path": "/exception/404",
+        "name": "404",
+        "key": "exception.404"
+      },
+      {
+        "path": "/exception/500",
+        "name": "500",
+        "key": "exception.500"
       }
     ]
   },
