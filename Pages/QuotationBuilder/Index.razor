@@ -9,25 +9,23 @@
         <Step Title="Waiting" Description="This is a description." />
     </Steps>
 </div>
-@if (step == 0)
-{
-    <div>
-        <SpecifyBasicForm goNextStep="goNextStep" />
-    </div>
-}
-@if (step == 1)
-{
-    <div>
-        <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
-    </div>
-}
+<div style="display:@stepVisible(0)">
+    <SpecifyBasicForm goNextStep="goNextStep" />
+</div>
 
-
-
+<div style="display:@stepVisible(1)">
+    <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
+</div>
 
 
 @code {
     public int step = 0;
+
+    private string stepVisible(int _step)
+    {
+        return _step != step ? "none" : "";
+    }
+
 
     private void goNextStep()
     {
