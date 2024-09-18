@@ -1,5 +1,5 @@
-﻿@namespace BlazorAntdProApp.Pages.RoomManagement
-@page "/room-management"
+﻿@namespace BlazorAntdProApp.Pages.UserManagement
+@page "/user-management"
 
 @using AntDesign.TableModels
 @using System.ComponentModel.DataAnnotations
@@ -7,13 +7,20 @@
 <Table @ref="_table" TItem="ItemData" PageSize="5" Total="_total" DataSource="_dataSource" @bind-SelectedRows="_selectedRows" OnChange="OnChange">
     <TitleTemplate>
         <Flex Justify="end" Gap="10">
+            <Button Type="primary" @onclick="()=>importHandler()"> Import </Button>
             <Button Type="primary" @onclick="()=> StartEdit(default)">New</Button>
             <Button Disabled="!_selectedRows.Any()" Danger @onclick="DeleteAll">Delete</Button>
         </Flex>
     </TitleTemplate>
     <ColumnDefinitions Context="row">
-         <Selection />
-        <GenerateColumns Definitions="@((n,c) => {  c.Sortable = true; })" />
+        <Selection />
+        <PropertyColumn Property="c=>c.Name">
+            <div >@row.Name</div>
+        </PropertyColumn>
+        <PropertyColumn Property="c=>c.CurrentNo" />
+        <PropertyColumn Property="c=>c.NewNo">
+            <div style="color:@getCellColor(int.Parse(row.CurrentNo),int.Parse(row.NewNo))">@row.NewNo</div>
+        </PropertyColumn>
         <ActionColumn Title="Action">
             <a @onclick="() => StartEdit(row)">Edit</a>
             <a @onclick="() => Delete(row)" style="color:red;margin-left:10px;">Delete</a>
@@ -30,6 +37,11 @@
     List<ItemData> _dataSource;
     int _total;
 
+    private string getCellColor(int currentValue,int newValue)
+    {
+        return currentValue > newValue ? "red" : "green";
+    }
+
     void OnChange(QueryModel<ItemData> query)
     {
         _total = mockDb.AsQueryable().ExecuteTableQuery(query).Count();
@@ -45,7 +57,24 @@
                 {
                     Title = data.Id > 0 ? "Edit" : "New",
                     Content = @<Form @ref="form" Model="data" OnFinish="()=> modalRef.OkAsync(true)" LabelColSpan="6" WrapperColSpan="18">
-        <GenerateFormItem NotGenerate="@(x=> x == "Id"|x=="No")" />
+        <FormItem Label="User Name">
+            <Input @bind-Value="@context.Name" />
+        </FormItem>
+        <FormItem Label="User No">
+            <Input @bind-Value="@context.CurrentNo" />
+        </FormItem>
+
+        <FormItem Label="Gender">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Style="max-width: 220px;"
+                    @bind-Value="@context.CurrentNo">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("1")" Label="Male" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("2")" Label="Female" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
     </Form>
     ,
             OnOk = async (e) =>
@@ -98,7 +127,7 @@
 
     async Task Delete(ItemData row)
     {
-        if (!await Comfirm($"Are you sure delete [{row.Room}]?"))
+        if (!await Comfirm($"Are you sure delete [{row.Name}]?"))
             return;
 
         mockDb = mockDb.Except(new[] { row }).ToList();
@@ -109,7 +138,7 @@
     {
         mockDb = Enumerable.Range(0, 5).Select(i =>
         {
-            return new ItemData { Id = i + 1, Room = $"Kamana {i}", No = "101" + i.ToString(), Floor = $"{i+1}" };
+            return new ItemData { Id = i + 1, Name = "Jason" + i.ToString(), CurrentNo = $"{i + 1}", NewNo = $"{i + 2}" };
         }).ToList();
     }
 
@@ -118,12 +147,30 @@
         return await ComfirmService.Show(message, "Confirm", ConfirmButtons.YesNo, ConfirmIcon.Warning) == ConfirmResult.Yes;
     }
 
+    private List<ItemData> importHandler()
+    {
+       
+
+        var res = Enumerable.Range(0, 5).Select(i =>
+           {
+               Random r = new Random();
+               int rdmInt = r.Next(-10, 10);
+               return new ItemData { Id = i + 1, Name = "Jason" + i.ToString(), CurrentNo = $"{i + 2}", NewNo = $"{i + rdmInt}" };
+           }).ToList();
+        _dataSource = res;
+        Console.WriteLine(res);
+        return res;
+    }
+
+
+
     record ItemData
     {
         public int Id { get; set; }
         [Required]
-        public string Room { get; set; }
-        public string No { get; set; }
-        public string Floor { get; set; }
+        public string Name { get; set; }
+        public string CurrentNo { get; set; }
+        public string NewNo { get; set; }
     }
+
 }
