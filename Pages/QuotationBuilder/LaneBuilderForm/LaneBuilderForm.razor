@@ -5,20 +5,23 @@
         Add a row
     </Button>
     <Table DataSource="listOfData" RowClassName="@(_=>"editable-row")" Bordered>
-        <PropertyColumn Width="30%" Property="c=>c.Name">
+        <PropertyColumn Width="30%" Property="c=>c.Carrier">
             @if (editId == context.Id)
             {
-                <Input Type="text" @bind-Value="context.Name" OnBlur="stopEdit" AutoFocus />
+                <Input Type="text" @bind-Value="context.Carrier" OnBlur="stopEdit" AutoFocus />
             }
             else
             {
                 <div class="editable-cell-value-wrap" style="padding-right:24px" @onclick="()=>startEdit(context.Id)">
-                    @context.Name
+                    @context.Carrier
                 </div>
             }
         </PropertyColumn>
-        <PropertyColumn Property="c=>c.Age"></PropertyColumn>
-        <PropertyColumn Property="c=>c.Address"></PropertyColumn>
+        <PropertyColumn Property="c=>c.OriginProt"></PropertyColumn>
+        <PropertyColumn Property="c=>c.Routing"></PropertyColumn>
+        <PropertyColumn Property="c=>c.DestinationPort"></PropertyColumn>
+        <PropertyColumn Property="c=>c.DestinationDoor"></PropertyColumn>
+        <PropertyColumn Property="c=>c.DoorRate"></PropertyColumn>
         <ActionColumn Title="Action">
             <Popconfirm Title="Sure to delete?"
                         OnConfirm="()=> deleteRow(context.Id)"
@@ -68,12 +71,18 @@
         public string Name { get; set; }
     };
 
+    record CarrierItemData (string Id,string OriginProt ,string Routing,string DestinationPort,string DestinationDoor,int DoorRate)
+    {
+        public string Carrier{ get; set; }
+    }
 
-    ItemData[] listOfData = { };
 
+    // ItemData[] listOfData = { };
+    CarrierItemData[] listOfData = { };
     void addRow()
     {
-        listOfData = listOfData.Append(new($"{i}", "32", $"London, Park Lane no. {i}") { Name = $"Edward King {i}" });
+        // listOfData = listOfData.Append(new($"{i}", "32", $"London, Park Lane no. {i}") { Name = $"Edward King {i}" });
+        listOfData = listOfData.Append(new($"{i}", "ONE(USA)", "", "DALLAS,TX", "Evans,Dalaas", 1000) { Carrier = $"DarkStar {i}"});
         i++;
     }
 

@@ -1,25 +1,35 @@
 ﻿@namespace BlazorAntdProApp.Pages.QuotationBuilder
 @page "/quotation-builder"
+@using System.Text.Json
+@inject IMessageService _message
 
-<div>
+
+<div style="margin-bottom:20px">
     <Steps Current="step" Class="site-navigation-steps">
-        <Step Title="Finished" Description="This is a description." />
-        <Step Title="In Progress" Subtitle="Left 00:00:08" Description="This is a description." />
-        <Step Title="Waiting" Description="This is a description." />
-        <Step Title="Waiting" Description="This is a description." />
+        <Step Title="Specify Basic" Description="" />
+        <Step Title="Specify Rate Plan" Subtitle="" Description="" />
+        <Step Title="Preview" Description="" />
+        <Step Title="Distribute" Description="" />
     </Steps>
+    <Divider/>
 </div>
 <div style="display:@stepVisible(0)">
-    <SpecifyBasicForm goNextStep="goNextStep" />
+    <SpecifyBasicForm @ref="specifyBasicForm" goNextStep="goNextStep" />
 </div>
 
 <div style="display:@stepVisible(1)">
-    <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
+    <LaneBuilderForm  goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
+</div>
+
+<div>
+    <Button Type="@ButtonType.Primary" OnClick="handleSubmit">Submit</Button>
 </div>
 
 
 @code {
     public int step = 0;
+    private SpecifyBasicForm specifyBasicForm;
+
 
     private string stepVisible(int _step)
     {
@@ -43,5 +53,11 @@
             step--;
             StateHasChanged();
         }
+    }
+
+    private void handleSubmit()
+    {
+        var res = specifyBasicForm.getSpecifyBasicFormModel();
+        Console.WriteLine($"Success:{JsonSerializer.Serialize(res)}");
     }
 }

@@ -4,20 +4,86 @@
 @using System.Text.Json;
 @using System.ComponentModel
 
+<Flex Justify="space-between" Vertical="false">
+    <Select TItem="string"
+            TItemValue="string"
+            Placeholder="Select Customer"
+            Style="width:200"
+            @bind-Value="@Customer">
+        <SelectOptions>
+            <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+            <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+        </SelectOptions>
+    </Select>
+
+    <Checkbox @bind-Checked="@autoSendEnable">
+        Auto Send if datasets updated
+    </Checkbox>
+</Flex>
+
+<Divider></Divider>
+
 <Form Model="@model"
       OnFinish="OnFinish"
+      Layout="horizantal"
       OnFinishFailed="OnFinishFailed"
       LabelColSpan="8"
       WrapperColSpan="16">
-    <FormItem Label="User Name">
-        <Input @bind-Value="@context.Username" />
+
+
+    <FormItem Label="American Shipping Representative">
+        <Input @bind-Value="@context.AmericanShippingRepresentative" />
     </FormItem>
-    <FormItem Label="Password">
-        <InputPassword @bind-Value="@context.Password" />
+    <FormItem Label="StaticSheet">
+        <Select TItem="string"
+                TItemValue="string"
+                Placeholder="Please select task type"
+                @bind-Value="@context.StaticSheet">
+            <SelectOptions>
+                <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+                <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+            </SelectOptions>
+        </Select>
     </FormItem>
-    <FormItem Label="" WrapperColOffset="8" WrapperColSpan="16">
-        <Checkbox @bind-Value="context.RememberMe">Remember me</Checkbox>
+    <FormItem Label="NRA Template File">
+        <Button Icon="upload">
+            <span>Click to Upload</span>
+        </Button>
     </FormItem>
+
+    <FormItem Label="Commodity">
+        <Select TItem="string"
+                TItemValue="string"
+                Placeholder="Please select task type"
+                @bind-Value="@context.StaticSheet">
+            <SelectOptions>
+                <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+                <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+            </SelectOptions>
+        </Select>
+    </FormItem>
+    <Divider />
+
+    <FormItem Label="TPAC import - USEC">
+        <Input @bind-Value="@context.USEC" Width="200" />
+    </FormItem>
+    <FormItem Label="TPAC import - USWC">
+        <Input @bind-Value="@context.USWC" Width="200" />
+    </FormItem>
+    <FormItem Label="TPAC import - USGC">
+        <Input @bind-Value="@context.USGC" Width="200" />
+    </FormItem>
+    <FormItem Label="TPAC import - IPI">
+        <Input @bind-Value="@context.IPI" Width="200" />
+    </FormItem>
+    <FormItem Label="TPAC import - IPI">
+        <Input @bind-Value="@context.IPI" Width="200" />
+    </FormItem>
+    <FormItem Label="TPAC import - IPI">
+        <Input @bind-Value="@context.IPI" Width="200" />
+    </FormItem>
+
+
     <FormItem WrapperColOffset="8" WrapperColSpan="16">
         <Button Type="@ButtonType.Primary" HtmlType="submit">
             Next
@@ -26,13 +92,26 @@
 </Form>
 @code
 {
+    public string Customer { get; set; }
+    public Boolean autoSendEnable { get; set; }
+
     public class Model
     {
-        [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Password { get; set; }
-        public bool RememberMe { get; set; } = true;
+
+        // [Required]
+        public string AmericanShippingRepresentative { get; set; }
+        // [Required]
+        public string StaticSheet { get; set; }
+        // [Required]
+        public string NRATemplateFile { get; set; }
+
+        public string Commodity { get; set; }
+
+        public string USEC { get; set; }
+        public string USWC { get; set; }
+        public string USGC { get; set; }
+        public string IPI { get; set; }
+
     }
 
     [Parameter]
@@ -40,7 +119,7 @@
 
     private Model model = new Model();
 
-    private Model getSpecifyBasicFormModel()
+    public Model getSpecifyBasicFormModel()
     {
         return model;
     }
