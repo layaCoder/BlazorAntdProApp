@@ -4,92 +4,113 @@
 @using System.Text.Json;
 @using System.ComponentModel
 
-<Flex Justify="space-between" Vertical="false">
-    <Select TItem="string"
-            TItemValue="string"
-            Placeholder="Select Customer"
-            Style="width:200"
-            @bind-Value="@Customer">
-        <SelectOptions>
-            <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
-            <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
-        </SelectOptions>
-    </Select>
+<Card Style="align-self:center;width:800px;">
+    <Body>
+        <Flex Justify="space-between" Vertical="false">
+            <Select Style="width:200px"
+                    TItem="string"
+                    TItemValue="string"
+                    Placeholder="Select Customer"
+                    @bind-Value="@Customer">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+                </SelectOptions>
+            </Select>
 
-    <Checkbox @bind-Checked="@autoSendEnable">
-        Auto Send if datasets updated
-    </Checkbox>
-</Flex>
+            <Checkbox @bind-Checked="@autoSendEnable">
+                Auto Send if datasets updated
+            </Checkbox>
+        </Flex>
 
-<Divider></Divider>
-
-<Form Model="@model"
-      OnFinish="OnFinish"
-      Layout="horizantal"
-      OnFinishFailed="OnFinishFailed"
-      LabelColSpan="8"
-      WrapperColSpan="16">
+        <Divider></Divider>
 
 
-    <FormItem Label="American Shipping Representative">
-        <Input @bind-Value="@context.AmericanShippingRepresentative" />
-    </FormItem>
-    <FormItem Label="StaticSheet">
-        <Select TItem="string"
-                TItemValue="string"
-                Placeholder="Please select task type"
-                @bind-Value="@context.StaticSheet">
-            <SelectOptions>
-                <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
-                <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
-            </SelectOptions>
-        </Select>
-    </FormItem>
-    <FormItem Label="NRA Template File">
-        <Button Icon="upload">
-            <span>Click to Upload</span>
-        </Button>
-    </FormItem>
-
-    <FormItem Label="Commodity">
-        <Select TItem="string"
-                TItemValue="string"
-                Placeholder="Please select task type"
-                @bind-Value="@context.Commodity">
-            <SelectOptions>
-                <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
-                <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
-            </SelectOptions>
-        </Select>
-    </FormItem>
-    <Divider />
-
-    <FormItem Label="TPAC import - USEC">
-        <Input @bind-Value="@context.USEC" Width="200" />
-    </FormItem>
-    <FormItem Label="TPAC import - USWC">
-        <Input @bind-Value="@context.USWC" Width="200" />
-    </FormItem>
-    <FormItem Label="TPAC import - USGC">
-        <Input @bind-Value="@context.USGC" Width="200" />
-    </FormItem>
-    <FormItem Label="TPAC import - IPI">
-        <Input @bind-Value="@context.IPI" Width="200" />
-    </FormItem>
-    <FormItem Label="TPAC import - IPI">
-        <Input @bind-Value="@context.IPI" Width="200" />
-    </FormItem>
-    <FormItem Label="TPAC import - IPI">
-        <Input @bind-Value="@context.IPI" Width="200" />
-    </FormItem>
+        <Form Model="@model"
+              OnFinish="OnFinish"
+              Layout="horizantal"
+              OnFinishFailed="OnFinishFailed"
+              LabelColSpan="8"
+              WrapperColSpan="16">
 
 
-    <FormItem WrapperColOffset="8" WrapperColSpan="16">
-        <Button Type="@ButtonType.Primary" HtmlType="submit">
-            Next
-        </Button>
-    </FormItem>
-</Form>
+            <FormItem Label="American Shipping Representative">
+                <Input @bind-Value="@context.AmericanShippingRepresentative" Placeholder="Please input" />
+            </FormItem>
+            <FormItem Label="StaticSheet">
+                <Select Style="width:200px"
+                        TItem="string"
+                        TItemValue="string"
+                        Placeholder="Please select"
+                        @bind-Value="@context.StaticSheet">
+                    <SelectOptions>
+                        <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+                        <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+                    </SelectOptions>
+                </Select>
+            </FormItem>
+            <FormItem Label="NRA Template File">
+                <Button Icon="upload">
+                    <span>Click to Upload</span>
+                </Button>
+            </FormItem>
+            <FormItem Label="Commodity">
+                <Select Style="width:200px"
+                        TItem="string"
+                        TItemValue="string"
+                        Placeholder="Please select"
+                        @bind-Value="@context.Commodity">
+                    <SelectOptions>
+                        <SelectOption TItem="string" TItemValue="string" Value="@("private")" Label="Private" />
+                        <SelectOption TItem="string" TItemValue="string" Value="@("public")" Label="Public" />
+                    </SelectOptions>
+                </Select>
+            </FormItem>
+            <Divider />
+
+       @*     <FormItem Label="TPAC import - USEC">
+                <Input @bind-Value="@context.USEC" Width="200" />
+            </FormItem>
+            <FormItem Label="TPAC import - USWC">
+                <Input @bind-Value="@context.USWC" Width="200" />
+            </FormItem>
+            <FormItem Label="TPAC import - USGC">
+                <Input @bind-Value="@context.USGC" Width="200" />
+            </FormItem>
+            <FormItem Label="TPAC import - IPI">
+                <Input @bind-Value="@context.IPI" Width="200" />
+            </FormItem>
+            <FormItem Label="TPAC import - IPI">
+                <Input @bind-Value="@context.IPI" Width="200" />
+            </FormItem>
+            <FormItem Label="TPAC import - IPI">
+                <Input @bind-Value="@context.IPI" Width="200" />
+            </FormItem>
+            *@
+            <Row Gutter="24">
+                @for (var i = 0; i < 6; i++)
+                {
+                    var index = i;
+                    var field = $"field-{index}";
+                    <GridCol Span="12" @key="index">
+                        <FormItem Label="@($"Field {index}")">
+                            <Input @bind-Value="@(context.USEC)" Placeholder="placeholder" />
+                        </FormItem>
+                    </GridCol>
+                }
+            </Row>
+
+
+            <FormItem WrapperColOffset="8" WrapperColSpan="16">
+                <Button Type="@ButtonType.Primary" HtmlType="submit"
+                        Style="background-color:#0D76BD;">
+                    Next
+                </Button>
+            </FormItem>
+        </Form>
+    </Body>
+
+</Card>
 @code
 {
     public string Customer { get; set; }

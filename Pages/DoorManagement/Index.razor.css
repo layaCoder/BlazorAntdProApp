@@ -1,0 +1,16 @@
+﻿.btn-new {
+    background-color:red !important;
+}
+
+.ant-table-thead {
+    background-color: red;
+}
+
+.ant-pagination-item-active {
+    color: #fff
+}
+
+.btn-delete{
+    color:red;
+    background-color:aqua;
+}

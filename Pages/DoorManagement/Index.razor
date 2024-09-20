@@ -1,29 +1,48 @@
-﻿@namespace BlazorAntdProApp.Pages.UserManagement
-@page "/user-management"
+﻿@namespace BlazorAntdProApp.Pages.DoorManagement
+@page "/door-management"
 
 @using AntDesign.TableModels
 @using System.ComponentModel.DataAnnotations
 
+
+<Flex Justify="space-between" Gap="10" style="background:#D8DFEB;padding-top:10px;padding-bottom:10px;padding-right:10px;">
+    <div>
+        <Search Placeholder="Input Search Text" WrapperStyle="margin-left:10px; width: 200px;" AllowClear />
+        <Select TItem="string"
+                TItemValue="string"
+                Placeholder="Active"
+                Style="max-width: 220px;"
+                AllowClear="true">
+            <SelectOptions>
+                <SelectOption TItem="string" TItemValue="string" Label="True" />
+                <SelectOption TItem="string" TItemValue="string" Label="False" />
+            </SelectOptions>
+        </Select>
+    </div>
+    <div>
+        <Button Type="primary" @onclick="()=> StartEdit(default)" Class="btn-new" Style="background:#0D76BD;color:#fff;">New</Button>
+        <Button Disabled="!_selectedRows.Any()"
+                Class="btn-delete"
+                Danger @onclick="DeleteAll">
+
+            Delete
+        </Button>
+    </div>
+</Flex>
 <Table @ref="_table" TItem="ItemData" PageSize="5" Total="_total" DataSource="_dataSource" @bind-SelectedRows="_selectedRows" OnChange="OnChange">
-    <TitleTemplate>
-        <Flex Justify="end" Gap="10">
-            <Button Type="primary" @onclick="()=>importHandler()"> Import </Button>
-            <Button Type="primary" @onclick="()=> StartEdit(default)">New</Button>
-            <Button Disabled="!_selectedRows.Any()" Danger @onclick="DeleteAll">Delete</Button>
-        </Flex>
-    </TitleTemplate>
+
     <ColumnDefinitions Context="row">
-        <Selection />
-        <PropertyColumn Property="c=>c.Name">
-            <div >@row.Name</div>
+        <Selection HeaderStyle="@tableHeaderStyle" />
+        <PropertyColumn Property="c=>c.Name" HeaderStyle="@tableHeaderStyle">
+            <div>@row.Name</div>
         </PropertyColumn>
-        <PropertyColumn Property="c=>c.CurrentNo" />
-        <PropertyColumn Property="c=>c.NewNo">
-            <div style="color:@getCellColor(int.Parse(row.CurrentNo),int.Parse(row.NewNo))">@row.NewNo</div>
-        </PropertyColumn>
-        <ActionColumn Title="Action">
-            <a @onclick="() => StartEdit(row)">Edit</a>
-            <a @onclick="() => Delete(row)" style="color:red;margin-left:10px;">Delete</a>
+        <PropertyColumn Property="c=>c.DestinationPort" HeaderStyle="@tableHeaderStyle" />
+        <PropertyColumn Property="c=>c.DestinationDoor" HeaderStyle="@tableHeaderStyle" />
+        <PropertyColumn Property="c=>c.Profits" HeaderStyle="@tableHeaderStyle" />
+        <PropertyColumn Property="c=>c.Active" HeaderStyle="@tableHeaderStyle" />
+        <ActionColumn Align="ColumnAlign.Center" Title="Action" HeaderStyle="@tableHeaderStyle">
+            <a @onclick="() => StartEdit(row)" style="color:#0D76BD;">Edit</a>
+            <a @onclick="() => Delete(row)" style="color:#B0282F;margin-left:10px;">Delete</a>
         </ActionColumn>
     </ColumnDefinitions>
 </Table>
@@ -37,7 +56,9 @@
     List<ItemData> _dataSource;
     int _total;
 
-    private string getCellColor(int currentValue,int newValue)
+    string tableHeaderStyle = "background:#275594;color:#fff;";
+
+    private string getCellColor(int currentValue, int newValue)
     {
         return currentValue > newValue ? "red" : "green";
     }
@@ -57,18 +78,18 @@
                 {
                     Title = data.Id > 0 ? "Edit" : "New",
                     Content = @<Form @ref="form" Model="data" OnFinish="()=> modalRef.OkAsync(true)" LabelColSpan="6" WrapperColSpan="18">
-        <FormItem Label="User Name">
+        <FormItem Label="Name">
             <Input @bind-Value="@context.Name" />
         </FormItem>
         <FormItem Label="User No">
-            <Input @bind-Value="@context.CurrentNo" />
+            <Input @bind-Value="@context.DestinationPort" />
         </FormItem>
 
         <FormItem Label="Gender">
             <Select TItem="string"
                     TItemValue="string"
                     Style="max-width: 220px;"
-                    @bind-Value="@context.CurrentNo">
+                    @bind-Value="@context.DestinationDoor">
                 <SelectOptions>
                     <SelectOption TItem="string" TItemValue="string" Value="@("1")" Label="Male" />
                     <SelectOption TItem="string" TItemValue="string" Value="@("2")" Label="Female" />
@@ -138,7 +159,7 @@
     {
         mockDb = Enumerable.Range(0, 5).Select(i =>
         {
-            return new ItemData { Id = i + 1, Name = "Jason" + i.ToString(), CurrentNo = $"{i + 1}", NewNo = $"{i + 2}" };
+            return new ItemData { Id = i + 1, Name = "Evans, Dallas" + i.ToString(), DestinationPort = $"{"Dallas, TX" + 1}", DestinationDoor = $"{"Saltillo, TX 75457 (EVANS)"}", Profits = "1000", Active = true };
         }).ToList();
 
 
@@ -151,18 +172,7 @@
         return await ComfirmService.Show(message, "Confirm", ConfirmButtons.YesNo, ConfirmIcon.Warning) == ConfirmResult.Yes;
     }
 
-    private List<ItemData> importHandler()
-    {
-        var res = Enumerable.Range(0, 5).Select(i =>
-           {
-               Random r = new Random();
-               int rdmInt = r.Next(-10, 10);
-               return new ItemData { Id = i + 1, Name = "Jason" + i.ToString(), CurrentNo = $"{i + 2}", NewNo = $"{i + rdmInt}" };
-           }).ToList();
-        _dataSource = res;
-        Console.WriteLine(res);
-        return res;
-    }
+
 
 
 
@@ -171,8 +181,10 @@
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public string CurrentNo { get; set; }
-        public string NewNo { get; set; }
+        public string DestinationPort { get; set; }
+        public string DestinationDoor { get; set; }
+        public string Profits { get; set; }
+        public bool Active { get; set; }
     }
 
 }

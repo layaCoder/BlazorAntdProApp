@@ -36,5 +36,10 @@
     "path": "/user-management",
     "name": "User Management",
     "key": "user-management"
+  },
+  {
+    "path": "/door-management",
+    "name": "Door Management",
+    "key": "door-management"
   }
 ]

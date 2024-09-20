@@ -1,9 +1,97 @@
 ﻿@namespace BlazorAntdProApp.Pages.QuotationBuilder
+@using BlazorAntdProApp.Models.QuotationBuilder.LaneBuilderForm
 
 <div>
-    <Button OnClick="addRow" Type="primary" Style="margin-bottom:16px">
-        Add a row
-    </Button>
+    <Form Model="@lane"
+          Layout="@FormLayout.Inline"
+          @ref="form"
+          OnFinish="OnFinish"
+          OnFinishFailed="OnFinishFailed"
+          LabelColSpan="8"
+          WrapperColSpan="16">
+        <FormItem Label="Carrier">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.Carrier">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("F14-1")" Label="Colt1-1" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("F14-2")" Label="Colt1-2" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("F16")" Label="Colt2-1" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+        <FormItem Label="Origin">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.OriginPort">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("Dallas")" Label="Dallas" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("Buffalo")" Label="Buffalo" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+        <FormItem Label="Destination">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.DestinationPort">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("Georgia")" Label="Georgia" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("Mariana")" Label="Mariana" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+        <FormItem Label="Routing">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.Routing">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("PLAN A")" Label="PLAN A" />
+                    <SelectOption TItem="string" TItemValue="string" Value="@("PLAN B")" Label="PLAN B" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+       
+         <FormItem Label="Door Rate">
+            <Select TItem="int"
+                    TItemValue="int"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.DoorRate">
+                <SelectOptions>
+                    <SelectOption TItem="int" TItemValue="int" Value=1 Label="99" />
+                    <SelectOption TItem="int" TItemValue="int" Value=2 Label="101" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+        <FormItem Label="Destination">
+            <Select TItem="string"
+                    TItemValue="string"
+                    Placeholder="Please select"
+                    Style="width: 220px;"
+                    @bind-Value="@context.DestinationDoor">
+                <SelectOptions>
+                    <SelectOption TItem="string" TItemValue="string" Value="@("Black Gate")" Label="Black Gate" />
+                </SelectOptions>
+            </Select>
+        </FormItem>
+        <FormItem>
+            <Button Type="@ButtonType.Primary" HtmlType="submit">
+                Add
+            </Button>
+        </FormItem>
+
+    </Form>
+
+
+
     <Table DataSource="listOfData" RowClassName="@(_=>"editable-row")" Bordered>
         <PropertyColumn Width="30%" Property="c=>c.Carrier">
             @if (editId == context.Id)
@@ -33,7 +121,7 @@
     </Table>
     <Divider>
         <Button OnClick="goPreviousStep">Previous</Button>
-        <Button Type="@ButtonType.Primary" OnClick="goNextStep">Next</Button>
+        <Button Type="@ButtonType.Primary" OnClick="goNextStep" Style="background-color:#0D76BD;">Next</Button>
     </Divider>
 </div>
 
@@ -66,14 +154,19 @@
     public Action goPreviousStep { get; set; }
     int i = 0;
     string editId;
-    record ItemData(string Id, string Age, string Address)
-    {
-        public string Name { get; set; }
-    };
+    // record ItemData(string Id, string Age, string Address)
+    // {
+    //     public string Name { get; set; }
+    // };
 
-    record CarrierItemData (string Id,string OriginProt ,string Routing,string DestinationPort,string DestinationDoor,int DoorRate)
+    private Lane lane = new Lane();
+    private Form<Lane> form;
+
+
+
+    record CarrierItemData(string Id, string OriginProt, string Routing, string DestinationPort, string DestinationDoor, int DoorRate)
     {
-        public string Carrier{ get; set; }
+        public string Carrier { get; set; }
     }
 
 
@@ -82,7 +175,7 @@
     void addRow()
     {
         // listOfData = listOfData.Append(new($"{i}", "32", $"London, Park Lane no. {i}") { Name = $"Edward King {i}" });
-        listOfData = listOfData.Append(new($"{i}", "ONE(USA)", "", "DALLAS,TX", "Evans,Dalaas", 1000) { Carrier = $"DarkStar {i}"});
+        listOfData = listOfData.Append(new($"{i}", "ONE(USA)", "", "DALLAS,TX", "Evans,Dalaas", 1000) { Carrier = $"DarkStar {i}" });
         i++;
     }
 
@@ -107,5 +200,16 @@
     {
         addRow();
         addRow();
+    }
+
+    private void OnFinish(EditContext editContext)
+    {
+        Console.WriteLine($"Success:{JsonSerializer.Serialize(lane)}");
+        form.Reset();
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(lane)}");
     }
 }
