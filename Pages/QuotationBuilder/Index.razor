@@ -14,11 +14,11 @@
     <Divider />
 </div>
 <div>
-    <div style="display:@stepVisible(1)">
+    <div style="display:@stepVisible(0)">
         <SpecifyBasicForm @ref="specifyBasicForm" goNextStep="goNextStep" />
     </div>
 
-    <div style="display:@stepVisible(0)">
+    <div style="display:@stepVisible(1)">
         <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
     </div>
 </div>
