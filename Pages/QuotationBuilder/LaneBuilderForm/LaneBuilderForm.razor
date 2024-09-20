@@ -2,94 +2,143 @@
 @using BlazorAntdProApp.Models.QuotationBuilder.LaneBuilderForm
 
 <div>
-    <Form Model="@lane"
-          Layout="@FormLayout.Inline"
-          @ref="form"
-          OnFinish="OnFinish"
-          OnFinishFailed="OnFinishFailed"
-          LabelColSpan="8"
-          WrapperColSpan="16">
-        <FormItem Label="Carrier">
-            <Select TItem="string"
-                    TItemValue="string"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.Carrier">
-                <SelectOptions>
-                    <SelectOption TItem="string" TItemValue="string" Value="@("F14-1")" Label="Colt1-1" />
-                    <SelectOption TItem="string" TItemValue="string" Value="@("F14-2")" Label="Colt1-2" />
-                    <SelectOption TItem="string" TItemValue="string" Value="@("F16")" Label="Colt2-1" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-        <FormItem Label="Origin">
-            <Select TItem="string"
-                    TItemValue="string"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.OriginPort">
-                <SelectOptions>
-                    <SelectOption TItem="string" TItemValue="string" Value="@("Dallas")" Label="Dallas" />
-                    <SelectOption TItem="string" TItemValue="string" Value="@("Buffalo")" Label="Buffalo" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-        <FormItem Label="Destination">
-            <Select TItem="string"
-                    TItemValue="string"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.DestinationPort">
-                <SelectOptions>
-                    <SelectOption TItem="string" TItemValue="string" Value="@("Georgia")" Label="Georgia" />
-                    <SelectOption TItem="string" TItemValue="string" Value="@("Mariana")" Label="Mariana" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-        <FormItem Label="Routing">
-            <Select TItem="string"
-                    TItemValue="string"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.Routing">
-                <SelectOptions>
-                    <SelectOption TItem="string" TItemValue="string" Value="@("PLAN A")" Label="PLAN A" />
-                    <SelectOption TItem="string" TItemValue="string" Value="@("PLAN B")" Label="PLAN B" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-       
-         <FormItem Label="Door Rate">
-            <Select TItem="int"
-                    TItemValue="int"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.DoorRate">
-                <SelectOptions>
-                    <SelectOption TItem="int" TItemValue="int" Value=1 Label="99" />
-                    <SelectOption TItem="int" TItemValue="int" Value=2 Label="101" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-        <FormItem Label="Destination">
-            <Select TItem="string"
-                    TItemValue="string"
-                    Placeholder="Please select"
-                    Style="width: 220px;"
-                    @bind-Value="@context.DestinationDoor">
-                <SelectOptions>
-                    <SelectOption TItem="string" TItemValue="string" Value="@("Black Gate")" Label="Black Gate" />
-                </SelectOptions>
-            </Select>
-        </FormItem>
-        <FormItem>
-            <Button Type="@ButtonType.Primary" HtmlType="submit">
-                Add
-            </Button>
-        </FormItem>
-
-    </Form>
-
+    <Card>
+        <Form Model="@lane"
+              Layout="@FormLayout.Horizontal"
+              @ref="form"
+              OnFinish="OnFinish"
+              OnFinishFailed="OnFinishFailed"
+              LabelColSpan="8"
+              WrapperColSpan="16">
+            <Row Gutter="24">
+                <GridCol Span="6">
+                    <FormItem Label="Carrier">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.Carrier">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("F14-1")" Label="Colt1-1" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("F14-2")" Label="Colt1-2" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("F16")" Label="Colt2-1" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                <GridCol Span="6">
+                    <FormItem Label="Build From">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.OriginPort">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("OriginPort")" Label="Origin Prot" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("DestinationProt")" Label="Destination Prot" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                <GridCol Span="6">
+                    <FormItem Label="Origin">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.OriginPort">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Dallas")" Label="Dallas" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Buffalo")" Label="Buffalo" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                <GridCol Span="6">
+                    <FormItem Label="Destination">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.DestinationPort">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Georgia")" Label="Georgia" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Mariana")" Label="Mariana" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+            </Row>
+            <Row Gutter="24">
+                <GridCol Span="6">
+                    <FormItem Label="Routing">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.Routing">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("PLAN A")" Label="PLAN A" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("PLAN B")" Label="PLAN B" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                 <GridCol Span="6">
+                    <FormItem Label="Need Delivery">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                        >
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Yes")" Label="Yes" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("No")" Label="No" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Incl")" Label="Incl" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                <GridCol Span="6">
+                    <FormItem Label="Door Rate">
+                        <Select TItem="int"
+                                TItemValue="int"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.DoorRate">
+                            <SelectOptions>
+                                <SelectOption TItem="int" TItemValue="int" Value=99 Label="99" />
+                                <SelectOption TItem="int" TItemValue="int" Value=101 Label="101" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                <GridCol Span="6">
+                    <FormItem Label="Door">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.DestinationDoor">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Black Gate")" Label="Black Gate" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                </GridCol>
+                   
+            </Row>
+            <Row>
+            <GridCol Span="24" Style="text-align:right;">
+                    <Button Type="@ButtonType.Primary"
+                            HtmlType="submit"
+                            Style="background-color:#0D76BD;">
+                        Add a row
+                    </Button>
+                </GridCol>
+               </Row>
+        </Form>
+    </Card>
 
 
     <Table DataSource="listOfData" RowClassName="@(_=>"editable-row")" Bordered>
@@ -205,6 +254,9 @@
     private void OnFinish(EditContext editContext)
     {
         Console.WriteLine($"Success:{JsonSerializer.Serialize(lane)}");
+        var res = JsonSerializer.Serialize(lane);
+        // (string Id, string OriginProt, string Routing, string DestinationPort, string DestinationDoor, int DoorRate)
+        listOfData = listOfData.Append(new($"{lane.Id}", $"{lane.OriginPort}", $"{lane.Routing}", $"{lane.DestinationPort}", $"{lane.DestinationDoor}", lane.DoorRate) { Carrier = $"{lane.Carrier}" });
         form.Reset();
     }
 
