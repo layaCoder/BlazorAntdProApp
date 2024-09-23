@@ -1,0 +1,63 @@
+﻿@inherits LayoutComponentBase
+
+<Layout Style="min-height: 100vh; ">
+    <Sider Collapsible=false>
+        <div class="logo" />
+        <Menu Theme="MenuTheme.Dark" DefaultSelectedKeys=@(new[]{"1"}) Mode="MenuMode.Inline">
+            @{
+                foreach (MenuDataItem menuItem in _menuData)
+                {
+                    if (menuItem.Children != null && menuItem.Children.Length > 0)
+                    {
+                        RenderFragment subTitle =
+                        @<span>
+                            <span>@menuItem.Name</span>
+                        </span>
+                        ;
+                        <SubMenu Key=@menuItem.Key TitleTemplate=subTitle>
+
+                        @foreach(MenuDataItem subItem in menuItem.Children)
+                        {
+                                <MenuItem RouterLink=@subItem.Path Key=@subItem.Key>@subItem.Name</MenuItem>
+                        }
+                        </SubMenu>
+                    }
+                    else
+                    {
+
+                        <MenuItem Key=@menuItem.Key RouterLink=@menuItem.Path>
+                            @* <Icon Type="pie-chart" Theme="outline" /> *@
+                            <span>@menuItem.Name</span>
+                        </MenuItem>
+
+                    }
+
+                }
+            }
+            }
+
+        </Menu>
+    </Sider>
+    <Layout Class="site-layout">
+        <Header Class="site-layout-background" Style=" padding: 0 ;"></Header>
+        <Content Style="margin:0 16px;">
+            @Body
+        </Content>
+        <Footer Style="text-align:center ">Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+</Layout>
+
+
+
+
+<style>
+    #components-layout-demo-side .logo {
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px;
+    }
+
+    .site-layout .site-layout-background {
+        background: #fff;
+    }
+</style>
