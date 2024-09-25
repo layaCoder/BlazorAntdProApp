@@ -4,13 +4,7 @@
 
 @using System.ComponentModel
 
-<Table DataSource="data" TItem="LaneRecord" Bordered>
-    <GroupTitleTemplate Context="group">
-        <span>Carrier.@group.Key</span>
-    </GroupTitleTemplate>
-    <GroupFooterTemplate Context="group">
-
-    </GroupFooterTemplate>
+<Table DataSource="_formatedTableData" Bordered>
     <ColumnDefinitions>
         <PropertyColumn Property="c=>c.Carrier" />
         <PropertyColumn Property="c=>c.OriginPort" />
@@ -31,48 +25,19 @@
         <PropertyColumn Property="c=>c.CurrentTotal" />
     </ColumnDefinitions>
     <ExpandTemplate Context="rowData">
-        <div class="expanded-table">
-            <div class="table-item">
-                <div>TMF</div>
-                <div>@rowData.Data.TMF</div>
-            </div>
-            <div class="table-item">
-                <div>ISP</div>
-                <span>@rowData.Data.ISP</span>
-            </div>
-            <div class="table-item">
-                <div>AMS</div>
-                <div>@rowData.Data.AMS</div>
-            </div>
-            <div class="table-item">
-                <div>ADD</div>
-                <div>@rowData.Data.ADD</div>
-            </div>
-            <div class="table-item">
-                <div>ARR</div>
-                <div>@rowData.Data.ARR</div>
-            </div>
-            <div class="table-item">
-                <div>PSS</div>
-                <div>@rowData.Data.PSS</div>
-            </div>
-            <div class="table-item">
-                <div>CRF</div>
-                <div>@rowData.Data.CRF</div>
-            </div>
-        </div>
+        <Table DataSource="rowData.Data.ExtraDataList" HidePagination>
+            <PropertyColumn Property="c=>c.TMF" />
+            <PropertyColumn Property="c=>c.ISP" />
+            <PropertyColumn Property="c=>c.AMS" />
+            <PropertyColumn Property="c=>c.ADD" />
+            <PropertyColumn Property="c=>c.ARR" />
+            <PropertyColumn Property="c=>c.PSS" />
+            <PropertyColumn Property="c=>c.CRF" />
+        </Table>
     </ExpandTemplate>
 </Table>
 
 @code {
-    string GradeGroupBy(int score)
-       => score switch
-       {
-           >= 95 => "A",
-           >= 90 => "B",
-           _ => "C"
-       };
-
 
     LaneRecord[] data =
      {
@@ -100,7 +65,7 @@
            CurrentTotal=9999
         },
          new() {
-           Carrier="DarkStar1-1",
+          Carrier="DarkStar1-1",
            OriginPort ="NewYork",
            DestinationPort="Shanghai",
            Routing="Plan A",
@@ -111,11 +76,14 @@
            Commodity="CDSM/FAK/GARM",
            ContainerSize="40'",
            NewOceanFreight=5000,
-           CurrentOceanFreight=200,
+           CurrentOceanFreight=6000,
            NewBafLss=3000,
-           CurrentBafLss=999,
+           CurrentBafLss=2000,
            NewDps=3000,
            CurrentDps=2000,
+           ISP=8999,
+           AMS=9999,
+           ARR=9999,
            NewTotal=9999,
            CurrentTotal=9999
         },
@@ -141,40 +109,61 @@
         },
     };
 
+    LaneRowItem[] _formatedTableData = [];
+
 
 
     protected override void OnInitialized()
     {
-        LaneRowItem[] res = [];
+        LaneRowItem[] formatedTableData = [];
 
         foreach (LaneRecord originData in data)
         {
-            if (res.Length == 0)
+            if (formatedTableData.Length == 0)
             {
                 LaneRowItem resItem = dataTransform(originData);
-                res = res.Append(resItem);
+                formatedTableData = formatedTableData.Append(resItem);
             }
             else
             {
-                for (int i = 0; i < res.Length; i++)
+                for (int i = 0; i < formatedTableData.Length; i++)
                 {
-                    if (res[i].Carrier == originData.Carrier)
+                    if (formatedTableData[i].Carrier == originData.Carrier&&
+                    formatedTableData[i].OriginPort == originData.OriginPort &&
+                    formatedTableData[i].DestinationPort == originData.DestinationPort &&
+                    formatedTableData[i].Routing == originData.Routing &&
+                    formatedTableData[i].DestinationDoor == originData.DestinationDoor &&
+                    formatedTableData[i].DoorRate == originData.DoorRate &&
+                    formatedTableData[i].Door == originData.Door &&
+                    formatedTableData[i].Transit == originData.Transit &&
+                    formatedTableData[i].Commodity == originData.Commodity &&
+                    formatedTableData[i].ContainerSize == originData.ContainerSize &&
+                    formatedTableData[i].NewOceanFreight == originData.NewOceanFreight &&
+                    formatedTableData[i].CurrentOceanFreight == originData.CurrentOceanFreight &&
+                    formatedTableData[i].NewBafLss == originData.NewBafLss &&
+                    formatedTableData[i].CurrentBafLss == originData.CurrentBafLss &&
+                    formatedTableData[i].NewDps == originData.NewDps &&
+                    formatedTableData[i].CurrentDps == originData.CurrentDps &&
+                    formatedTableData[i].NewTotal == originData.NewTotal &&
+                    formatedTableData[i].CurrentTotal == originData.CurrentTotal
+                    )
                     {
                         LaneRowItem rowItem = dataTransform(originData);
-                        List<ExtraData> newList = res[i].ExtraDataList.Union(rowItem.ExtraDataList).ToList();
-                        res[i].ExtraDataList = newList;
+                        List<ExtraData> newList = formatedTableData[i].ExtraDataList.Union(rowItem.ExtraDataList).ToList();
+                        formatedTableData[i].ExtraDataList = newList;
                         break;
                     }
                     else
                     {
                         LaneRowItem rowItem = dataTransform(originData);
-                        res = res.Append(rowItem);
+                        formatedTableData = formatedTableData.Append(rowItem);
                         break;
                     }
                 }
             }
-            
+
         }
+        _formatedTableData = formatedTableData;
 
     }
 
@@ -195,6 +184,23 @@
         return new LaneRowItem()
             {
                 Carrier = record.Carrier,
+                OriginPort = record.OriginPort,
+                DestinationPort=record.DestinationPort,
+                Routing = record.Routing,
+                DestinationDoor=record.DestinationDoor,
+                DoorRate=record.DoorRate,
+                Door=record.Door,
+                Transit= record.Transit,
+                Commodity= record.Commodity,
+                ContainerSize = record.ContainerSize,
+                NewOceanFreight = record.NewOceanFreight,
+                CurrentOceanFreight = record.CurrentOceanFreight,
+                NewBafLss = record.NewBafLss,
+                CurrentBafLss= record.CurrentBafLss,
+                NewDps= record.NewDps,
+                CurrentDps=record.CurrentDps,
+                NewTotal=record.NewTotal,
+                CurrentTotal=record.CurrentTotal,
                 ExtraDataList = [extraData]
             };
     }
