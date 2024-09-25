@@ -4,14 +4,13 @@
 <div>
     <Card BodyStyle="background-color:#D8DFEB;">
         <Form Model="@lane"
-              Layout="@FormLayout.Horizontal"
+              Layout="@FormLayout.Vertical"
               @ref="form"
               OnFinish="OnFinish"
               OnFinishFailed="OnFinishFailed"
               LabelColSpan="8"
               WrapperColSpan="16">
             <Row Gutter="24">
-                <GridCol Span="6">
                     <FormItem Label="Carrier">
                         <Select TItem="string"
                                 Mode="multiple"
@@ -27,8 +26,6 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-                <GridCol Span="6">
                     <FormItem Label="Build From">
                         <Select TItem="string"
                                 TItemValue="string"
@@ -40,8 +37,6 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-                <GridCol Span="6">
                     <FormItem Label="Origin">
                         <Select TItem="string"
                                 TItemValue="string"
@@ -54,8 +49,6 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-                <GridCol Span="6">
                     <FormItem Label="Destination">
                         <Select TItem="string"
                                 TItemValue="string"
@@ -68,10 +61,7 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-            </Row>
-            <Row Gutter="24">
-                <GridCol Span="6">
+           
                     <FormItem Label="Routing">
                         <Select TItem="string"
                                 TItemValue="string"
@@ -84,9 +74,7 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-                <GridCol Span="6">
-                    <FormItem Label="Need Delivery">
+                    <FormItem Label="Need Delivery"  LabelColSpan="10">
                         <Select TItem="string"
                                 TItemValue="string"
                                 Placeholder="Please select"
@@ -98,22 +86,6 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-                <GridCol Span="6">
-                    <FormItem Label="Door Rate">
-                        <Select TItem="int"
-                                TItemValue="int"
-                                Placeholder="Please select"
-                                Style="width: 220px;"
-                                @bind-Value="@context.DoorRate">
-                            <SelectOptions>
-                                <SelectOption TItem="int" TItemValue="int" Value=99 Label="99" />
-                                <SelectOption TItem="int" TItemValue="int" Value=101 Label="101" />
-                            </SelectOptions>
-                        </Select>
-                    </FormItem>
-                </GridCol>
-                <GridCol Span="6">
                     <FormItem Label="Door">
                         <Select TItem="string"
                                 TItemValue="string"
@@ -125,10 +97,15 @@
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                </GridCol>
-
-            </Row>
-            <Row>
+                    <FormItem Label=" ">
+                <Button Type="@ButtonType.Primary"
+                        HtmlType="submit"
+                        Style="background-color:#0D76BD;">
+                    Add a row
+                </Button>
+                </FormItem>
+                    </Row>
+           @* <Row>
                 <GridCol Span="24" Style="text-align:right;">
                     <Button Type="@ButtonType.Primary"
                             HtmlType="submit"
@@ -136,7 +113,7 @@
                         Add a row
                     </Button>
                 </GridCol>
-            </Row>
+            </Row>*@
         </Form>
     </Card>
 

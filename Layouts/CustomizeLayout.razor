@@ -2,7 +2,9 @@
 
 <Layout Style="min-height: 100vh; ">
     <Sider Collapsible=false>
-        <div class="logo" />
+        <div class="logo" >
+            <h1 style="color:#fff;font-weight:bold;display:flex;justify-content:center;">Shipping Pricing</h1>
+        </div>
         <Menu Theme="MenuTheme.Dark" DefaultSelectedKeys=@(new[]{"1"}) Mode="MenuMode.Inline">
             @{
                 foreach (MenuDataItem menuItem in _menuData)
@@ -37,7 +39,9 @@
         </Menu>
     </Sider>
     <Layout Class="site-layout">
-        <Header Class="site-layout-background" Style=" padding: 0 ;"></Header>
+        <Header Class="site-layout-background" Style=" padding:0;padding-right:20px; display:flex;justify-content:flex-end;">
+            <BlazorAntdProApp.Components.RightContent />
+        </Header>
         <Content Style="margin:0 16px;">
             @Body
         </Content>
@@ -49,13 +53,24 @@
 
 
 <style>
-    #components-layout-demo-side .logo {
-        height: 32px;
-        background: rgba(255, 255, 255, 0.2);
-        margin: 16px;
+    .logo {
+        height: 64px;
+        background: #275594;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        
     }
 
     .site-layout .site-layout-background {
         background: #fff;
+        margin-bottom:20px;
+        box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    }
+
+    .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background: #275594 !important;
+        opacity: 1 !important;
     }
 </style>
