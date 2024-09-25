@@ -41,5 +41,10 @@
     "path": "/door-management",
     "name": "Door Management",
     "key": "door-management"
+  },
+  {
+    "path": "/group-table",
+    "name": "Group Table",
+    "key": "group-table"
   }
 ]

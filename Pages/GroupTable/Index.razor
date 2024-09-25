@@ -1,10 +1,12 @@
 ﻿@namespace BlazorAntdProApp.Pages.GroupTable
 @page "/group-table"
 @using BlazorAntdProApp.Models.GroupTable
-
 @using System.ComponentModel
+@implements IAsyncDisposable
 
-<Table DataSource="_formatedTableData" Bordered>
+
+<Table DataSource="@_formatedTableData" HidePagination
+       Bordered>
     <ColumnDefinitions>
         <PropertyColumn Property="c=>c.Carrier" />
         <PropertyColumn Property="c=>c.OriginPort" />
@@ -36,185 +38,52 @@
         </Table>
     </ExpandTemplate>
 </Table>
+<div id="load-more-trigger"></div>
+
+<Button Id="js-trigger" Type="@ButtonType.Primary">js-trigger</Button>
+<Button id="xx" OnClick="handleLoadMore">Load More</Button>
 
 @code {
-
-    LaneRecord[] data =
-     {
-        new() {
-           Carrier="DarkStar1-1",
-           OriginPort ="NewYork",
-           DestinationPort="Shanghai",
-           Routing="Plan A",
-           DestinationDoor="Black Gate",
-           DoorRate = 1000,
-           Door="BG",
-           Transit=20,
-           Commodity="CDSM/FAK/GARM",
-           ContainerSize="40'",
-           NewOceanFreight=5000,
-           CurrentOceanFreight=6000,
-           NewBafLss=3000,
-           CurrentBafLss=2000,
-           NewDps=3000,
-           CurrentDps=2000,
-           ISP=1000,
-           AMS=2000,
-           ARR=4000,
-           NewTotal=9999,
-           CurrentTotal=9999
-        },
-         new() {
-          Carrier="DarkStar1-1",
-           OriginPort ="NewYork",
-           DestinationPort="Shanghai",
-           Routing="Plan A",
-           DestinationDoor="Black Gate",
-           DoorRate = 1000,
-           Door="BG",
-           Transit=20,
-           Commodity="CDSM/FAK/GARM",
-           ContainerSize="40'",
-           NewOceanFreight=5000,
-           CurrentOceanFreight=6000,
-           NewBafLss=3000,
-           CurrentBafLss=2000,
-           NewDps=3000,
-           CurrentDps=2000,
-           ISP=8999,
-           AMS=9999,
-           ARR=9999,
-           NewTotal=9999,
-           CurrentTotal=9999
-        },
-         new() {
-           Carrier="DarkStar1-2",
-           OriginPort ="NewYork",
-           DestinationPort="Shanghai",
-           Routing="Plan A",
-           DestinationDoor="Black Gate",
-           DoorRate = 1000,
-           Door="BG",
-           Transit=20,
-           Commodity="CDSM/FAK/GARM",
-           ContainerSize="40'",
-           NewOceanFreight=5000,
-           CurrentOceanFreight=6000,
-           NewBafLss=3000,
-           CurrentBafLss=2000,
-           NewDps=3000,
-           CurrentDps=2000,
-           NewTotal=9999,
-           CurrentTotal=9999
-        },
-    };
-
-    LaneRowItem[] _formatedTableData = [];
-
-
-
-    protected override void OnInitialized()
+    async ValueTask IAsyncDisposable.DisposeAsync()
     {
-        LaneRowItem[] formatedTableData = [];
-
-        foreach (LaneRecord originData in data)
+        if (module is not null)
         {
-            if (formatedTableData.Length == 0)
-            {
-                LaneRowItem resItem = dataTransform(originData);
-                formatedTableData = formatedTableData.Append(resItem);
-            }
-            else
-            {
-                for (int i = 0; i < formatedTableData.Length; i++)
-                {
-                    if (formatedTableData[i].Carrier == originData.Carrier&&
-                    formatedTableData[i].OriginPort == originData.OriginPort &&
-                    formatedTableData[i].DestinationPort == originData.DestinationPort &&
-                    formatedTableData[i].Routing == originData.Routing &&
-                    formatedTableData[i].DestinationDoor == originData.DestinationDoor &&
-                    formatedTableData[i].DoorRate == originData.DoorRate &&
-                    formatedTableData[i].Door == originData.Door &&
-                    formatedTableData[i].Transit == originData.Transit &&
-                    formatedTableData[i].Commodity == originData.Commodity &&
-                    formatedTableData[i].ContainerSize == originData.ContainerSize &&
-                    formatedTableData[i].NewOceanFreight == originData.NewOceanFreight &&
-                    formatedTableData[i].CurrentOceanFreight == originData.CurrentOceanFreight &&
-                    formatedTableData[i].NewBafLss == originData.NewBafLss &&
-                    formatedTableData[i].CurrentBafLss == originData.CurrentBafLss &&
-                    formatedTableData[i].NewDps == originData.NewDps &&
-                    formatedTableData[i].CurrentDps == originData.CurrentDps &&
-                    formatedTableData[i].NewTotal == originData.NewTotal &&
-                    formatedTableData[i].CurrentTotal == originData.CurrentTotal
-                    )
-                    {
-                        LaneRowItem rowItem = dataTransform(originData);
-                        List<ExtraData> newList = formatedTableData[i].ExtraDataList.Union(rowItem.ExtraDataList).ToList();
-                        formatedTableData[i].ExtraDataList = newList;
-                        break;
-                    }
-                    else
-                    {
-                        LaneRowItem rowItem = dataTransform(originData);
-                        formatedTableData = formatedTableData.Append(rowItem);
-                        break;
-                    }
-                }
-            }
-
+            await module.DisposeAsync();
         }
-        _formatedTableData = formatedTableData;
-
     }
-
-
-    private LaneRowItem dataTransform(LaneRecord record)
-    {
-        ExtraData extraData = new ExtraData()
-            {
-                TMF = record.TMF,
-                ISP = record.ISP,
-                AMS = record.AMS,
-                ADD = record.ADD,
-                ARR = record.ARR,
-                PSS = record.PSS,
-                CRF = record.CRF
-            };
-
-        return new LaneRowItem()
-            {
-                Carrier = record.Carrier,
-                OriginPort = record.OriginPort,
-                DestinationPort=record.DestinationPort,
-                Routing = record.Routing,
-                DestinationDoor=record.DestinationDoor,
-                DoorRate=record.DoorRate,
-                Door=record.Door,
-                Transit= record.Transit,
-                Commodity= record.Commodity,
-                ContainerSize = record.ContainerSize,
-                NewOceanFreight = record.NewOceanFreight,
-                CurrentOceanFreight = record.CurrentOceanFreight,
-                NewBafLss = record.NewBafLss,
-                CurrentBafLss= record.CurrentBafLss,
-                NewDps= record.NewDps,
-                CurrentDps=record.CurrentDps,
-                NewTotal=record.NewTotal,
-                CurrentTotal=record.CurrentTotal,
-                ExtraDataList = [extraData]
-            };
-    }
-
 }
-<style>
-    .expanded-table {
-        display: flex;
-        flex: 1;
-        flex-direction: row;
-    }
 
-    .table-item {
-        margin-right: 20px;
-    }
 
-</style>
+<script>
+    class GroupTableHelper {
+        static dotNetHelper;
+
+        static setDotNetHelper(value) {
+            GroupTableHelper.dotNetHelper = value;
+        }
+
+
+        static async loadMore() {
+          await  GroupTableHelper.dotNetHelper.invokeMethodAsync('loadMoreForJs')
+        }
+    }
+    window.GroupTableHelper = GroupTableHelper;
+
+
+
+    // create IntersectionObserver instance
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            //  check element visible
+            if (entry.intersectionRatio > 0) {
+                console.log('visible');
+                GroupTableHelper.loadMore();
+            }
+        });
+    }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+    // observer action
+    observer.observe(document.getElementById('load-more-trigger'));
+
+   
+</script>
