@@ -8,11 +8,11 @@
 <Table DataSource="@_formatedTableData" HidePagination
        Bordered>
     <ColumnDefinitions>
-        <PropertyColumn Property="c=>c.Carrier" />
-        <PropertyColumn Property="c=>c.OriginPort" />
+        <PropertyColumn Property="c=>c.Carrier" Filterable Sortable />
+        <PropertyColumn Property="c=>c.OriginPort" Filterable Sortable />
         <PropertyColumn Property="c=>c.DestinationPort" />
-        <PropertyColumn Property="c=>c.Routing" />
-        <PropertyColumn Property="c=>c.DestinationDoor" />
+        <PropertyColumn Property="c=>c.Routing"  />
+        <PropertyColumn Property="c=>c.DestinationDoor"  />
         <PropertyColumn Property="c=>c.Door" />
         <PropertyColumn Property="c=>c.DoorRate" />
         <PropertyColumn Property="c=>c.Transit" />
@@ -40,8 +40,7 @@
 </Table>
 <div id="load-more-trigger"></div>
 
-<Button Id="js-trigger" Type="@ButtonType.Primary">js-trigger</Button>
-<Button id="xx" OnClick="handleLoadMore">Load More</Button>
+<Button OnClick="handleLoadMore">Load More</Button>
 
 @code {
     async ValueTask IAsyncDisposable.DisposeAsync()

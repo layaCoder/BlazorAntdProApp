@@ -182,6 +182,7 @@ namespace BlazorAntdProApp.Pages.GroupTable
 
         private LaneRowItem dataTransform(LaneRecord record)
         {
+
             ExtraData extraData = new ExtraData()
             {
                 TMF = record.TMF,
@@ -224,7 +225,7 @@ namespace BlazorAntdProApp.Pages.GroupTable
             LaneRowItem[] newData=[];
             _pageIndex = _pageIndex + 1;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Random r = new Random();
                 LaneRecord record = new LaneRecord()
