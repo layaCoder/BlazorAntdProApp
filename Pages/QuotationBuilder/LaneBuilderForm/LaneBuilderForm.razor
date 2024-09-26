@@ -28,16 +28,20 @@
                     </FormItem>
                     <FormItem Label="Build From">
                         <Select TItem="string"
-                                TItemValue="string"
+                                TItemValue="int"
                                 Placeholder="Please select"
-                                Style="width: 220px;">
+                                Style="width: 220px;"
+                                @bind-Value = "@buildType"
+                        >
                             <SelectOptions>
-                                <SelectOption TItem="string" TItemValue="string" Value="@("OriginPort")" Label="Origin Prot" />
-                                <SelectOption TItem="string" TItemValue="string" Value="@("DestinationProt")" Label="Destination Prot" />
+                                <SelectOption TItem="string" TItemValue="int" Value="@(1)" Label="Origin Prot" />
+                                <SelectOption TItem="string" TItemValue="int" Value="@(2)" Label="Destination Prot" />
                             </SelectOptions>
                         </Select>
                     </FormItem>
-                    <FormItem Label="Origin">
+
+
+                @if (buildType==0||buildType==1) {<FormItem Label="Origin">
                         <Select TItem="string"
                                 TItemValue="string"
                                 Placeholder="Please select"
@@ -60,7 +64,36 @@
                                 <SelectOption TItem="string" TItemValue="string" Value="@("Mariana")" Label="Mariana" />
                             </SelectOptions>
                         </Select>
+                    </FormItem>}
+                 else{
+                    <FormItem Label="Destination">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.DestinationPort">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Georgia")" Label="Georgia" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Mariana")" Label="Mariana" />
+                            </SelectOptions>
+                        </Select>
                     </FormItem>
+                    <FormItem Label="Origin">
+                        <Select TItem="string"
+                                TItemValue="string"
+                                Placeholder="Please select"
+                                Style="width: 220px;"
+                                @bind-Value="@context.OriginPort">
+                            <SelectOptions>
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Dallas")" Label="Dallas" />
+                                <SelectOption TItem="string" TItemValue="string" Value="@("Buffalo")" Label="Buffalo" />
+                            </SelectOptions>
+                        </Select>
+                    </FormItem>
+                 }
+                
+
+               
            
                     <FormItem Label="Routing">
                         <Select TItem="string"
@@ -178,9 +211,11 @@
     public Action goNextStep { get; set; }
     [Parameter]
     public Action goPreviousStep { get; set; }
+
+    int buildType = 0;
     int i = 0;
     string editId;
-
+    
   
 
     string tableHeaderStyle = "background:#275594;color:#fff;";
