@@ -6,11 +6,15 @@
     <Card BodyStyle="background:#F5F9FF !important;">
         <div class="login">
             <Image Preview="false" Src="/assets/logo_cutted.png"></Image>
-            <Flex Vertical="false" Align="center" Justify="center">
-                <span style="margin-top:50px;font-size:24px;font-weight:bold;font-family:Heuristica">Pricing System</span>
+            <Flex Vertical Align="center" Justify="center">
+                <span style="margin-top:50px;font-size:24px;font-weight:bold;">Pricing System</span>
+                @if (!String.IsNullOrEmpty(errorMessage))
+                {
+                    <div class="error_message">@errorMessage</div>
+                }
             </Flex>
-            <Divider Style="margin-top:6px;margin-bottom:20px;"/>
-            <Form Model="@_model" OnFinish="HandleSubmit" >
+            <Divider Style="margin-top:6px;margin-bottom:20px;" />
+            <Form Model="@_model" OnFinish="HandleSubmit">
                 <FormItem>
                     <AntDesign.Input Placeholder="User Name" Size="large" @bind-Value="@context.UserName">
                         <Prefix><Icon Type="user" /></Prefix>
@@ -22,19 +26,36 @@
                     </AntDesign.Input>
                 </FormItem>
 
-                <Button Type="primary" HtmlType="submit" Class="submit" Size="large" Block>Log in </Button>
+                <Button Type="primary"
+                        HtmlType="submit"
+                        Class="submit"
+                        Size="large"
+                        Block
+                        Loading="@_isLoading"
+                >
+                    Log in 
+                </Button>
             </Form>
             <Divider></Divider>
             <Flex Vertical="false" Justify="center" Align="center">
                 <div class="link_icon_wrapper">
-                    <a href="https://www.facebook.com/shipamerican/">
-                        <Icon Class="link_iocn" Type="facebook" Fill="#0D76BD" Theme="outline" Style="font-size:22px;width:20.2px;height:20.2px;"  />
+                    <a style="width:16px;height:16px;" target='_blank' href="https://www.facebook.com/shipamerican/">
+                        <svg width="1em;"
+                             height="1em;"
+                             version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true">
+                            <g id="Facebook F1_layer"><path fill="#0D76BD" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></g>
+                        </svg>
                     </a>
-                   
-                    <a >
-                        <Icon Class="link_iocn" Type="linkedin" Fill="#0D76BD" Theme="outline" Style="font-size:22px;width:20.2px;height:20.2px;" />
+
+                    <a style="width:16px;height:16px;" target='_blank' href="https://www.linkedin.com/company/735162">
+                        <svg width="1em;"
+                             height="1em;"
+                             version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                            <g id="LinkedIn In1_layer"><path fill="#0D76BD" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></g>
+                        </svg>
                     </a>
-                    <a style="width:20.2px;height:20.2px;" href="https://x.com/AmericanShipNJ">
+
+                    <a style="width:16px;height:16px;" target='_blank' href="https://x.com/AmericanShipNJ">
                         <svg focusable="false"
                              width="1em;"
                              height="1em;"
@@ -43,6 +64,7 @@
                             <g id="X Twitter1_layer"><path fill="#0D76BD" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></g>
                         </svg>
                     </a>
+
                 </div>
             </Flex>
         </div>
