@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xCYXNpY0xheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/OpenSource/Personal/BlazorAntdProApp/Layouts/CustomizeLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xDdXN0b21pemVMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/Account/Center/Components/AvatarList/AvatarListItem.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBdmF0YXJMaXN0XEF2YXRhckxpc3RJdGVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,6 +128,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/Search/SearchList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcU2VhcmNoTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/QuotationBuilder/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVvdGF0aW9uQnVpbGRlclxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/QuotationBuilder/LaneBuilderForm/LaneBuilderForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVvdGF0aW9uQnVpbGRlclxMYW5lQnVpbGRlckZvcm1cTGFuZUJ1aWxkZXJGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/QuotationBuilder/SpecifyBasicForm/SpecifyBasicForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVvdGF0aW9uQnVpbGRlclxTcGVjaWZ5QmFzaWNGb3JtXFNwZWNpZnlCYXNpY0Zvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/UserManagement/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlck1hbmFnZW1lbnRcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/OpenSource/Personal/BlazorAntdProApp/Routes.razor]
@@ -238,6 +258,10 @@ build_metadata.AdditionalFiles.CssScope = b-1oo4bp3kon
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-bjx3od4qqy
 
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/DoorManagement/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9vck1hbmFnZW1lbnRcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bi7j3sncdq
+
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/AdvancedForm/AdvancedForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxBZHZhbmNlZEZvcm1cQWR2YW5jZWRGb3JtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-warmfrbppx
@@ -261,6 +285,10 @@ build_metadata.AdditionalFiles.CssScope = b-1htd8k8ccg
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/Form/StepForm/StepForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxTdGVwRm9ybS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-dv7gq7pujx
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/GroupTable/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JvdXBUYWJsZVxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-s0s5ubsj8k
 
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/List/BasicList/BasicList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxCYXNpY0xpc3RcQmFzaWNMaXN0LnJhem9y
@@ -305,6 +333,10 @@ build_metadata.AdditionalFiles.CssScope = b-bodrahphlo
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/Result/Success/Success.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0XFN1Y2Nlc3NcU3VjY2Vzcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-s640warvbr
+
+[D:/OpenSource/Personal/BlazorAntdProApp/Pages/RoomManagement/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbU1hbmFnZW1lbnRcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-i2b7tlg3i1
 
 [D:/OpenSource/Personal/BlazorAntdProApp/Pages/User/Login/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dpblxMb2dpbi5yYXpvcg==

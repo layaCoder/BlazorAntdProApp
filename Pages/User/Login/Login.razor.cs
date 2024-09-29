@@ -11,27 +11,22 @@ namespace BlazorAntdProApp.Pages.User
         private readonly LoginParamsType _model = new LoginParamsType();
 
         [Inject] public NavigationManager NavigationManager { get; set; }
-
-        [Inject] public IAccountService AccountService { get; set; }
-
-        [Inject] public MessageService Message { get; set; }
+        private bool _isLoading = false;
+        private string errorMessage = string.Empty;
 
         public void HandleSubmit()
         {
             if (_model.UserName == "admin" && _model.Password == "admin")
             {
                 NavigationManager.NavigateTo("/");
-                //NavigationManager.NavigateTo("/list/search/articles");
                 return;
             }
-
-            if (_model.UserName == "user" && _model.Password == "ant.design") NavigationManager.NavigateTo("/");
+            else
+            {
+                _isLoading = !_isLoading;
+                errorMessage = "Invalid username or password!";
+            }
         }
 
-        public async Task GetCaptcha()
-        {
-            var captcha = await AccountService.GetCaptchaAsync(_model.Mobile);
-            await Message.Success($"Verification code validated successfully! The verification code is: {captcha}");
-        }
     }
 }

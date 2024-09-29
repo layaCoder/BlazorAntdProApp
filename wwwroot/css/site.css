@@ -7,49 +7,102 @@ body,
 #root,
 #app,
 app {
-  height: 100%;
+    height: 100%;
 }
+
 .colorWeak {
-  filter: invert(80%);
+    filter: invert(80%);
 }
+
 .ant-layout {
-  min-height: 100vh;
+    min-height: 100vh;
 }
+
 canvas {
-  display: block;
+    display: block;
 }
+
 body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
+
 .action {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 @media (max-width: 480px) {
-  .ant-table {
-    width: 100%;
-    overflow-x: auto;
-  }
-  .ant-table-thead > tr > th,
-  .ant-table-tbody > tr > th,
-  .ant-table-thead > tr > td,
-  .ant-table-tbody > tr > td {
-    white-space: pre;
-  }
-  .ant-table-thead > tr > th > span,
-  .ant-table-tbody > tr > th > span,
-  .ant-table-thead > tr > td > span,
-  .ant-table-tbody > tr > td > span {
-    display: block;
-  }
+    .ant-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > th,
+    .ant-table-thead > tr > td,
+    .ant-table-tbody > tr > td {
+        white-space: pre;
+    }
+
+        .ant-table-thead > tr > th > span,
+        .ant-table-tbody > tr > th > span,
+        .ant-table-thead > tr > td > span,
+        .ant-table-tbody > tr > td > span {
+            display: block;
+        }
 }
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  body .ant-design-pro > .ant-layout {
-    min-height: 100vh;
-  }
+    body .ant-design-pro > .ant-layout {
+        min-height: 100vh;
+    }
+}
+
+
+/*customize sytle */
+.ant-table-cell {
+    background: #fff;
+}
+
+.ant-btn-primary {
+    background-color: #0D76BD;
+    background: #0D76BD;
+}
+
+    .ant-btn-primary:hover {
+        background: #0D76BD;
+    }
+
+
+.ant-table-thead > tr > th {
+    background: #275594 !important;
+    color: #fff !important;
+}
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+    background: #275594;
+    border-color: #275594;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+    background: #fff;
+    border-color: #275594;
+}
+
+    .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+        color: #275594 !important;
+    }
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+    color: #275594 !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+    background-color: #275594 !important;
 }
