@@ -14,10 +14,11 @@
     <Divider />
 </div>
 <div>
+    <div style="display:flex;flex-direction:row;justify-content:center;">
     <div style="display:@stepVisible(0)">
         <SpecifyBasicForm @ref="specifyBasicForm" goNextStep="goNextStep" />
     </div>
-
+    </div>
     <div style="display:@stepVisible(1)">
         <LaneBuilderForm goNextStep="goNextStep" goPreviousStep="goPreviousStep" />
     </div>
@@ -66,26 +67,5 @@
 
 
 <style>
-    .ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
-        background: #275594;
-        border-color: #275594;
-    }
-
-    .ant-steps-item-finish .ant-steps-item-icon {
-        background: #fff;
-        border-color: #275594;
-    }
-
-        .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
-            color: #275594 !important;
-        }
-
-    .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after{
-        color:#275594 !important;
-    }
-
-    .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after{
-        background-color:#275594 !important;
-    }
-
+    
 </style>

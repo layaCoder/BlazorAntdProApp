@@ -84,3 +84,25 @@ ol {
     background: #275594 !important;
     color: #fff !important;
 }
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+    background: #275594;
+    border-color: #275594;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+    background: #fff;
+    border-color: #275594;
+}
+
+    .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+        color: #275594 !important;
+    }
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+    color: #275594 !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+    background-color: #275594 !important;
+}
