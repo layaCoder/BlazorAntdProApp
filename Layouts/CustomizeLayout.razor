@@ -3,7 +3,7 @@
 <Layout Style="min-height: 100vh; ">
     <Sider Collapsible=false>
         <div class="logo" >
-            <h1 style="color:#fff;font-weight:bold;display:flex;justify-content:center;">Shipping Pricing</h1>
+            <Image Preview="false" Src="/assets/logo_top_left.png" Style="height:62px;"></Image>
         </div>
         <Menu Theme="MenuTheme.Dark" DefaultSelectedKeys=@(new[]{"1"}) Mode="MenuMode.Inline">
             @{
@@ -39,15 +39,15 @@
         </Menu>
     </Sider>
     <Layout Class="site-layout">
-        <Header Class="site-layout-background" Style=" padding:0;padding-right:20px; display:flex;justify-content:flex-end;">
+        <Header Class="site-layout-background" Style="padding:0;padding-right:20px; display:flex;justify-content:flex-end;background:#275594 !important;color:#fff;">
             <BlazorAntdProApp.Components.RightContent />
         </Header>
-        <Content Style="margin:0 16px;">
+        <Content Style="padding:0 16px;padding-top:16px; padding-bottom:16px; background:#D8DFEB;">
             <div style="margin:0;padding:0;width:100%;overflow-x:auto;background-color:#F5F9FF !important;">
             @Body
             </div>
         </Content>
-        <Footer Style="text-align:center ">Ant Design ©2018 Created by Ant UED</Footer>
+       
     </Layout>
 </Layout>
 
@@ -67,7 +67,6 @@
 
     .site-layout .site-layout-background {
         background: #fff;
-        margin-bottom:20px;
         box-shadow: 0 1px 4px rgba(0,21,41,.08);
     }
 
